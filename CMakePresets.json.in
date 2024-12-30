@@ -1,0 +1,78 @@
+{
+  "version": 8,
+  "configurePresets": [
+    {
+      "name": "default",
+      "binaryDir": "${sourceDir}/build/${presetName}"
+    },
+    {
+      "name": "win-vs2022",
+      "inherits": "default",
+      "generator": "Visual Studio 17 2022",
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      },
+      "cacheVariables": {
+        "PJ_DIR": "<dir of pjproject>",
+        "pybind11_DIR": "eg: <${sourceDir}/../.venv/lib/site-packages/pybind11/share/cmake/pybind11>"
+      }
+    },
+    {
+      "name": "manylinux",
+      "inherits": "default",
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Linux"
+      },
+      "cacheVariables": {
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "win-vs2022-release",
+      "configuration": "Release",
+      "configurePreset": "win-vs2022"
+    },
+    {
+      "name": "win-vs2022-debug",
+      "configuration": "Debug",
+      "configurePreset": "win-vs2022"
+    },
+    {
+      "name": "manylinux",
+      "configurePreset": "manylinux"
+    }
+  ],
+  "workflowPresets": [
+    {
+      "name": "win",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "win-vs2022"
+        },
+        {
+          "type": "build",
+          "name": "win-vs2022-release"
+        }
+      ]
+    },
+    {
+      "name": "manylinux",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "manylinux"
+        },
+        {
+          "type": "build",
+          "name": "manylinux"
+        }
+      ]
+    }
+  ]
+}

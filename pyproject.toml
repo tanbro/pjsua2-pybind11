@@ -1,0 +1,24 @@
+[build-system]
+requires = [
+    "setuptools>=64",
+    "setuptools-scm>=8",
+    "pybind11>=2.6",
+    "mypy>=1.10",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pjsua2"
+
+readme = { file = 'README.md', content-type = 'text/markdown' }
+authors = [{ name = "liu xue yan", email = "liu_xue_yan@foxmail.com" }]
+
+requires-python = ">=3.8"
+
+dynamic = ["version"]
+
+[tool.setuptools.packages.find]
+where = ["python"]
+
+[tool.setuptools_scm]
+root = ".."

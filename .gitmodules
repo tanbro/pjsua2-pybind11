@@ -1,0 +1,8 @@
+[submodule "submodules/pjproject"]
+	path = submodules/pjproject
+	url = git@github.com:pjsip/pjproject.git
+	ignore = dirty
+[submodule "submodules/pybind11"]
+	path = submodules/pybind11
+	url = git@github.com:pybind/pybind11.git
+	ignore = dirty

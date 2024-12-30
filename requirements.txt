@@ -1,0 +1,6 @@
+# for development only!
+
+build
+setuptools
+pybind11
+mypy
