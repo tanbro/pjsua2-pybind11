@@ -9,13 +9,45 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pjsua2"
-
+keywords = [
+    "sip",
+    "rtp",
+    "sipua",
+    "uac",
+    "uas",
+    "pj",
+    "pjproject",
+    "pjsip",
+    "pjsua",
+    "pjsua2",
+    "telephony",
+    "telecommunications",
+    "communication",
+    "phone",
+    "softphone",
+]
 readme = { file = 'README.md', content-type = 'text/markdown' }
 authors = [{ name = "liu xue yan", email = "liu_xue_yan@foxmail.com" }]
 
 requires-python = ">=3.8"
 
 dynamic = ["version"]
+
+classifiers = [
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    # "Development Status :: 1 - Planning",
+    # "Development Status :: 2 - Pre-Alpha",
+    "Development Status :: 3 - Alpha",
+    #   "Development Status :: 4 - Beta",
+    # "Development Status :: 5 - Production/Stable",
+    # "Development Status :: 6 - Mature",
+    # "Development Status :: 7 - Inactive",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Telecommunications Industry",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Communications :: Telephony",
+    "Programming Language :: C++",
+]
 
 [tool.setuptools.packages.find]
 where = ["python"]
