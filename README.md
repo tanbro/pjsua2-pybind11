@@ -1,13 +1,10 @@
 # PJSUA2 PyBind11
 
-softphone client software uses [pjproject][] as the SIP UAC functionality base library.
-Despite [pjproject][] claiming its high-level API interfaces directly support C++, Java, C#, Python, etc. (through [SWIG][]), we found its [SWIG][] scripts to be outdated and poorly maintained, and there are visible issues on Windows —— causing the program to crash in certain cases.
+A Python library wrapped `PJSUA2` of [pjproject][] with [pybind11][].
 
-To ensure software quality, we decided to "hand-roll" a [pjproject][] high-level API Python language wrapper.
+Despite [pjproject][] claiming its high-level API interfaces directly support C++, Java, C#, Python, etc. (through [SWIG][]), we found its [SWIG][] scripts is not such friendly to Python, So we decided to "hand-roll" a [pjproject][] high-level API Python language wrapper.
 Considering [pjproject][]'s high-level API is based on C++ with an object-oriented style and is quite complete, we adopted [pybind11][] for C++ to Python wrapping.
 Strictly speaking, this is not a "from-scratch" hand-roll, but rather a "semi-automatic" one. It is sufficient for us to carefully manage memory and avoid dangers.
-
-We extracted the [pjproject][] [pybind11][] Wrapper into this separate subproject.
 
 ## Preparation
 
