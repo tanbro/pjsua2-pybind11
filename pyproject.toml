@@ -51,3 +51,5 @@ classifiers = [
 
 [tool.setuptools.packages.find]
 where = ["python"]
+
+[tool.setuptools_scm]
