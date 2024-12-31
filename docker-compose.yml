@@ -1,0 +1,17 @@
+name: pjsua2-bind11
+
+services:
+  builder:
+    build:
+      target: install_pjproject
+      args:
+        - PIP_INDEX_URL=$PIP_INDEX_URL
+    env_file:
+      - .env
+    volumes:
+      - type: bind
+        source: .
+        target: /work
+    working_dir: /work
+    command: >
+      bash scripts/build-wheel-manylinux.sh

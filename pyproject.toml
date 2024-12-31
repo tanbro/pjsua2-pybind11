@@ -1,7 +1,7 @@
 [build-system]
 requires = [
     "setuptools>=64",
-    "setuptools-scm>=8",
+#    "setuptools-scm>=8",
     "pybind11>=2.6",
     "mypy>=1.10",
 ]
@@ -15,7 +15,9 @@ authors = [{ name = "liu xue yan", email = "liu_xue_yan@foxmail.com" }]
 
 requires-python = ">=3.8"
 
-dynamic = ["version"]
+version = "0.1"
+
+# dynamic = ["version"]
 
 [tool.setuptools.packages.find]
 where = ["python"]

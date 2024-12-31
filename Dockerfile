@@ -1,4 +1,4 @@
-FROM quay.io/pypa/manylinux_2_28_x86_64 as base
+FROM quay.io/pypa/manylinux_2_28_x86_64 AS base
 
 ARG PJPROJECT=pjproject-2.14.1
 ARG PIP_INDEX_URL
@@ -12,6 +12,6 @@ RUN tar -xvf /downloads/${PJPROJECT}.tar.gz -C /downloads && \
     make dep && make && make install && \
     cd && rm -fr /downloads
 
-FROM base as install_pjproject
+FROM base AS install_pjproject
 COPY --from=build_pjproject /usr/local/ /usr/local/
 RUN ldconfig
