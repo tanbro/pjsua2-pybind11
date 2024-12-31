@@ -8,7 +8,7 @@ requires = [
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "pjsua2"
+name = "pjsua2-pybind11"
 keywords = [
     "sip",
     "rtp",
