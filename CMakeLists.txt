@@ -43,7 +43,7 @@ else()
 endif()
 
 # Find Python
-find_package(Python COMPONENTS Interpreter Development REQUIRED)
+find_package(Python COMPONENTS Development REQUIRED)
 # Find PyBind11
 find_package(pybind11 CONFIG)
 if(NOT ${pybind11_FOUND})

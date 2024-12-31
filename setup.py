@@ -68,6 +68,17 @@ class CustomBuildExt(build_ext):
 
     def after_build(self):
         StubGenCommand._run(self.build_lib, self._run_inplace)
+        # 强行：复制到子项目的目录，便于配合 virtual-env 调试
+        python_dir = os.path.join("python")
+        for root, dirs, files in os.walk(self.build_lib):
+            for name in files:
+                src = os.path.join(root, name)
+                src_relpath = os.path.relpath(src, self.build_lib)
+                dst_dir = os.path.join(python_dir, os.path.dirname(src_relpath))
+                print(f"copying {src} -> {dst_dir}")
+                shutil.copy(src, dst_dir)
+            for name in dirs:
+                os.makedirs(name, exist_ok=True)
 
 
 def setup_extensions():
