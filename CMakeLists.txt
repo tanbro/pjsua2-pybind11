@@ -43,7 +43,7 @@ else()
 endif()
 
 # Find Python
-find_package(Python COMPONENTS Interpreter Development.Module REQUIRED)
+find_package(Python3 COMPONENTS Interpreter Development.Module REQUIRED)
 # Find PyBind11
 find_package(pybind11 CONFIG)
 if(NOT ${pybind11_FOUND})
@@ -51,7 +51,7 @@ if(NOT ${pybind11_FOUND})
         "pybind11 not found, try execute `python -m pybind11 --cmakedir` ..."
     )
     execute_process(
-        COMMAND ${Python_EXECUTABLE} -m pybind11 --cmakedir
+        COMMAND ${Python3_EXECUTABLE} -m pybind11 --cmakedir
         OUTPUT_STRIP_TRAILING_WHITESPACE
         RESULT_VARIABLE pybind11_config_retcode
         OUTPUT_VARIABLE pybind11_DIR
